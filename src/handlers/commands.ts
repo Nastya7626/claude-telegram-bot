@@ -25,7 +25,7 @@ export async function handleStart(ctx: Context): Promise<void> {
   const workDir = WORKING_DIR;
 
   await ctx.reply(
-    `🤖 <b>Claude Telegram Bot</b>\n\n` +
+    `🤖 <b>Гриша</b>\n\n` +
       `Status: ${status}\n` +
       `Working directory: <code>${workDir}</code>\n\n` +
       `<b>Commands:</b>\n` +

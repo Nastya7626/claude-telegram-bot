@@ -4,7 +4,7 @@
  * Rate limiting, path validation, command safety.
  */
 
-import { resolve, normalize } from "path";
+import { resolve, normalize, sep } from "path";
 import { realpathSync } from "fs";
 import type { RateLimitBucket } from "./types";
 import {
@@ -103,7 +103,7 @@ export function isPathAllowed(path: string): boolean {
       const allowedResolved = resolve(allowed);
       if (
         resolved === allowedResolved ||
-        resolved.startsWith(allowedResolved + "/")
+        resolved.startsWith(allowedResolved + "/") || resolved.startsWith(allowedResolved + sep)
       ) {
         return true;
       }
